@@ -1,3 +1,3 @@
 export interface Payment {
-    pay(amount:number):void;
+    pay(cardOrPhone:string, amount:number):void;
 }

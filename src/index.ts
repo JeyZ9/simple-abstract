@@ -7,6 +7,12 @@ import { Rectangle } from "./Rectangle";
 import { Circle } from "./Circle";
 import { Dog } from "./Dog";
 import { Cat } from "./Cat";
+import { Payment } from './Payment';
+import { PaypalPayment } from "./PaypalPayment";
+import { CreditCardPayment } from "./CreditCardPayment";
+import { Flyable } from './Flyable';
+import { Car } from "./Car";
+import { Motorcycle } from "./Motorcycle";
 
 // const employee1 = new Employee("wisarut", 25000);
 
@@ -44,3 +50,16 @@ dog.makeSound();
 const cat = new Cat("เจเจ");
 log("แมวของฉันชื่อ:", cat.getName());
 cat.makeSound();
+
+log("###############################################");
+const pay1 = new PaypalPayment("0656683656", 15000);
+pay1.pay("0656683656", 120);
+const cpay = new CreditCardPayment("2345679", 15000);
+cpay.pay("2345679", 120);
+
+log("###############################################");
+const toyota = new Car("Toyota", 4, 220);
+toyota.fly();
+
+const wave = new Motorcycle("Honda", 2, 125);
+wave.chargeBattery();

@@ -9,14 +9,14 @@ export class PaypalPayment implements Payment {
         this.limit = limit;
     }
 
-    payment(phoneNumber:string, amount:number):void{
-        if(phoneNumber === this.phoneNumber){
-            this.pay(amount)
-        }
-    }
+    // payment():void{
+    //     if(phoneNumber === this.phoneNumber){
+    //         this.pay(amount)
+    //     }
+    // }
 
-    pay(amount: number): void {
-        if(this.limit >= amount){
+    pay(phoneNumber:string, amount:number): void {
+        if(this.limit >= amount && phoneNumber === this.phoneNumber){
             this.limit -= amount;
             log("ชำระเงินสำเร็จ!");
             return;

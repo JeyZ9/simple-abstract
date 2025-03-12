@@ -7,13 +7,13 @@ class PaypalPayment {
         this.phoneNumber = phoneNumber;
         this.limit = limit;
     }
-    payment(phoneNumber, amount) {
-        if (phoneNumber === this.phoneNumber) {
-            this.pay(amount);
-        }
-    }
-    pay(amount) {
-        if (this.limit >= amount) {
+    // payment():void{
+    //     if(phoneNumber === this.phoneNumber){
+    //         this.pay(amount)
+    //     }
+    // }
+    pay(phoneNumber, amount) {
+        if (this.limit >= amount && phoneNumber === this.phoneNumber) {
             this.limit -= amount;
             (0, console_1.log)("ชำระเงินสำเร็จ!");
             return;

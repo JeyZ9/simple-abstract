@@ -7,13 +7,13 @@ class CreditCardPayment {
         this.cardNumber = cardNumber;
         this.limit = limit;
     }
-    payment(cardNumber, amount) {
-        if (cardNumber === this.cardNumber) {
-            this.pay(amount);
-        }
-    }
-    pay(amount) {
-        if (this.limit >= amount) {
+    // payment(cardNumber:string, amount:number):void{
+    //     if(cardNumber === this.cardNumber){
+    //         this.pay(amount)
+    //     }
+    // }
+    pay(cardNumber, amount) {
+        if (this.limit >= amount && cardNumber === this.cardNumber) {
             this.limit -= amount;
             (0, console_1.log)("ชำระเงินสำเร็จ!");
             return;
